@@ -2,11 +2,23 @@
 
 In this repository we'll learn about Python, not the basic syntaxing and stuff, we'll be deep diving into the internals of how the different data structures and their methods work and much more likewise concepts. 
 
+MINDSET/QUESTIONS while doing Python:
+- Is this creating a new object?
+
+- Is Python reusing an existing object?
+
+- Is this mutating or rebinding?
+
+- Why is this fast / slow?
+
+
 ## TOPICS WE'RE COVERING:
 
 ### 0. Mental Model (FOUNDATION)
 
 These explain 80 percent of Python behavior:
+
+- Python is an interpreted, dynamic language
 
 - What an object is in Python
 
@@ -91,7 +103,12 @@ Critical for performance and correctness:
 - __del__ dangers
 
 ### 4. Built-in Data Structures Internals
+
+(map,filter, reduce)
+
 #### Lists
+
+- How its identifier (of list var.) stores the first element
 
 - Dynamic array implementation
 
@@ -109,6 +126,8 @@ Critical for performance and correctness:
 
 - In-place operations
 
+- Imp list methods for data-science
+
 #### Tuples
 
 - Immutable sequence design
@@ -120,6 +139,9 @@ Critical for performance and correctness:
 - Hashing behavior
 
 - When tuples outperform lists
+
+- Imp tuple methods for data-science
+
 
 #### Dictionaries
 
@@ -139,6 +161,9 @@ Critical for performance and correctness:
 
 - Dict views vs copies
 
+- Imp dictionary methods for data-science
+
+
 #### Sets
 
 - Set implementation details
@@ -150,6 +175,9 @@ Critical for performance and correctness:
 - Frozen sets
 
 - Set algebra internals
+
+- Imp set methods for data-science
+
 
 ### 5. String Internals
 
@@ -172,6 +200,9 @@ One of the most optimized parts of Python:
 - Encoding vs decoding
 
 - Memory layout of strings
+
+- Imp string methods for data-science
+
 
 ### 6. Function Internals
 
@@ -267,6 +298,10 @@ Everything iterable follows this:
 Performance-critical knowledge:
 
 - List comprehension vs loops
+
+- lambda functions
+
+- map, filter, reduce
 
 - Generator expressions
 
@@ -433,3 +468,36 @@ Essential for internals learning:
 - tracemalloc
 
 - objgraph
+
+
+### 22. Important Python Libraries
+
+- Flask
+
+- os
+
+- sys
+
+- numpy
+
+- pandas
+
+- beautifulsoup4, lxml
+
+- requests
+
+- subprocess
+
+- re 
+
+- logging
+
+- dis
+
+- timeit
+
+- gc
+
+- json
+
+- joblib
