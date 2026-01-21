@@ -1,432 +1,435 @@
 # PYTHON INTERNALS
 
-In this repository we'll learn about Python, not the basic syntaxing and stuff, we'll be deep diving into the internals of how the different data structures and their methods work and much more likewise concepts.
+In this repository we'll learn about Python, not the basic syntaxing and stuff, we'll be deep diving into the internals of how the different data structures and their methods work and much more likewise concepts. 
 
 ## TOPICS WE'RE COVERING:
 
 ### 0. Mental Model (FOUNDATION)
 
-These explain 80 percent of Python behavior.
+These explain 80 percent of Python behavior:
 
-What an object is in Python
+- What an object is in Python
 
-Variables as references, not containers
+- Variables as references, not containers
 
-Object identity, type, and value
+- Object identity, type, and value
 
-id() and memory addresses
+- id() and memory addresses
 
-Object lifetime
+- Object lifetime
 
-Singleton objects (None, True, False)
+- Singleton objects (None, True, False)
 
-Name binding vs assignment
+- Name binding vs assignment
 
-Rebinding vs mutation
+- Rebinding vs mutation
 
-Pass-by-object-reference model
+- Pass-by-object-reference model
+
+- Operator precedence in python
 
 ### 1. Object Model Internals
 
-Core to understanding everything else.
+Core to understanding everything else:
 
-type, id, dir
+- type, id, dir
 
-__class__
+- __class__
 
-Dynamic typing internals
+- Dynamic typing internals
 
-How attributes are stored
+- How attributes are stored
 
-Instance __dict__
+- Instance __dict__
 
-Class __dict__
+- Class __dict__
 
-Attribute lookup order
+- Attribute lookup order
 
-getattr, setattr, delattr
+- getattr, setattr, delattr
 
-__getattribute__ vs __getattr__
+- __getattribute__ vs __getattr__
 
-Object mutability model
+- Object mutability model
 
 ### 2. Equality and Identity
 
 A major source of bugs.
 
-== vs is
+- == vs is
 
-Object identity guarantees
+- Object identity guarantees
 
-Cached integers
+- Cached integers
 
-String interning
+- String interning
 
-When identity comparison is safe
+- When identity comparison is safe
 
-Floating point comparison issues
+- Floating point comparison issues
 
-Hash consistency rules
+- Hash consistency rules
 
 ### 3. Memory Management
 
-Critical for performance and correctness.
+Critical for performance and correctness:
 
-Reference counting
+- Reference counting
 
-Garbage collection
+- Garbage collection
 
-Cyclic garbage collector
+- Cyclic garbage collector
 
-gc module
+- gc module
 
-Weak references (weakref)
+- Weak references (weakref)
 
-Object resurrection pitfalls
+- Object resurrection pitfalls
 
-Memory leaks in Python
+- Memory leaks in Python
 
-__del__ dangers
+- __del__ dangers
 
 ### 4. Built-in Data Structures Internals
-Lists
+#### Lists
 
-Dynamic array implementation
+- Dynamic array implementation
 
-Overallocation strategy
+- Overallocation strategy
 
-Amortized append
+- Amortized append
 
-Resize behavior
+- Resize behavior
 
-Slice mechanics
+- Slice mechanics
 
-Copy vs view behavior
+- Copy vs view behavior
 
-List comprehension internals
+- List comprehension internals
 
-In-place operations
+- In-place operations
 
-Tuples
+#### Tuples
 
-Immutable sequence design
+- Immutable sequence design
 
-Memory footprint advantages
+- Memory footprint advantages
 
-Tuple packing and unpacking
+- Tuple packing and unpacking
 
-Hashing behavior
+- Hashing behavior
 
-When tuples outperform lists
+- When tuples outperform lists
 
-Dictionaries
+#### Dictionaries
 
-Hash table internals
+- Hash table internals
 
-Open addressing
+- Open addressing
 
-Collision resolution
+- Collision resolution
 
-Resize strategy
+- Resize strategy
 
-Order preservation (3.7+)
+- Order preservation (3.7+)
 
-Key immutability requirement
+- Key immutability requirement
 
-Hash randomization
+- Hash randomization
 
-Dict views vs copies
+- Dict views vs copies
 
-Sets
+#### Sets
 
-Set implementation details
+- Set implementation details
 
-Deduplication mechanics
+- Deduplication mechanics
 
-Membership testing performance
+- Membership testing performance
 
-Frozen sets
+- Frozen sets
 
-Set algebra internals
+- Set algebra internals
 
 ### 5. String Internals
 
-One of the most optimized parts of Python.
+One of the most optimized parts of Python:
 
-Unicode string representation
+- Unicode string representation
 
-Immutability consequences
+- Immutability consequences
 
-String interning rules
+- String interning rules
 
-Small string optimizations
+- Small string optimizations
 
-Concatenation pitfalls
+- Concatenation pitfalls
 
-join vs +
+- join vs +
 
-Slicing cost
+- Slicing cost
 
-Encoding vs decoding
+- Encoding vs decoding
 
-Memory layout of strings
+- Memory layout of strings
 
 ### 6. Function Internals
 
-Functions are objects.
+Functions are objects:
 
-Function object structure
+- Function object structure
 
-Default arguments evaluation
+- Default arguments evaluation
 
-Mutable default pitfalls
+- Mutable default pitfalls
 
-Closures
+- Closures
 
-__closure__
+- __closure__
 
-Cell objects
+- Cell objects
 
-Function annotations
+- Function annotations
 
-Keyword-only arguments
+- Keyword-only arguments
 
-Positional-only arguments
+- Positional-only arguments
 
-*args and **kwargs internals
+- *args and **kwargs internals
 
 ### 7. Scope and Namespace Resolution
 
-Why some variables behave weirdly.
+Why some variables behave weirdly:
 
-LEGB rule
+- LEGB rule
 
-Local variable optimization
+- Local variable optimization
 
-Global lookup costs
+- Global lookup costs
 
-global and nonlocal
+- global and nonlocal
 
-Fast locals vs globals
+- Fast locals vs globals
 
-Name shadowing bugs
+- Name shadowing bugs
 
 ### 8. Bytecode and Execution Model
 
-Why Python is slower and where.
+Why Python is slower and where:
 
-Source code to bytecode
+- Source code to bytecode
 
-Python virtual machine loop
+- Python virtual machine loop
 
-Bytecode instructions
+- Bytecode instructions
 
-dis module
+- dis module
 
-Stack-based execution
+- Stack-based execution
 
-Peephole optimizations
+- Peephole optimizations
 
-Constant folding
+- Constant folding
 
 ### 9. Truthiness and Boolean Logic
 
-Hidden control flow logic.
+Hidden control flow logic:
 
-__bool__
+- __bool__
 
-__len__
+- __len__
 
-Short-circuit evaluation
+- Short-circuit evaluation
 
-Truth value testing rules
+- Truth value testing rules
 
-Custom truthiness pitfalls
+- Custom truthiness pitfalls
 
 ### 10. Iteration Protocol
 
-Everything iterable follows this.
+Everything iterable follows this:
+  
+- Iterable vs iterator   (enumerator,zip,etc.).
 
-Iterable vs iterator
+- __iter__ and __next__
 
-__iter__ and __next__
+- StopIteration
 
-StopIteration
+- Generator internals
 
-Generator internals
+- Generator state machine
 
-Generator state machine
+- yield suspension mechanics
 
-yield suspension mechanics
 
 ### 11. Comprehensions and Generators
 
-Performance-critical knowledge.
+Performance-critical knowledge:
 
-List comprehension vs loops
+- List comprehension vs loops
 
-Generator expressions
+- Generator expressions
 
-Scope differences
+- Scope differences
 
-Memory usage comparison
+- Memory usage comparison
 
-Lazy evaluation internals
+- Lazy evaluation internals
 
 ### 12. Exception Handling Internals
 
-Expensive but powerful.
+Expensive but powerful:
 
-Exception object creation
+- Exception object creation
 
-Stack unwinding
+- Stack unwinding
 
-Traceback objects
+- Traceback objects
 
-Cost of try-except
+- Cost of try-except
 
-Control-flow misuse
+- Control-flow misuse
 
-Custom exceptions
+- Custom exceptions
 
 ### 13. Descriptor Protocol (ADVANCED)
 
-This is how Python magic works.
+This is how Python magic works:
 
-Descriptor protocol
+- Descriptor protocol
 
-__get__, __set__, __delete__
+- __get__, __set__, __delete__
 
-Bound vs unbound methods
+- Bound vs unbound methods
 
-@property internals
+- @property internals
 
-Class methods
+- Class methods
 
-Static methods
+- Static methods
 
 ### 14. Class Internals and OOP Mechanics
 
-Deep object-oriented internals.
+Deep object-oriented internals:
 
-Class creation process
+- Class creation process
 
-Metaclasses
+- Metaclasses
 
-type as a metaclass
+- type as a metaclass
 
-MRO (Method Resolution Order)
+- MRO (Method Resolution Order)
 
-C3 linearization
+- C3 linearization
 
-Multiple inheritance pitfalls
+- Multiple inheritance pitfalls
 
-__slots__
+- __slots__
 
-Dataclasses internals
+- Dataclasses internals
 
 ### 15. Context Managers
 
-Safe resource handling.
+Safe resource handling:
 
-with statement internals
+- with statement internals
 
-__enter__, __exit__
+- __enter__, __exit__
 
-contextlib
+- contextlib
 
-Exception suppression logic
+- Exception suppression logic
 
 ### 16. Concurrency and Parallelism
 
-Critical real-world topic.
+Critical real-world topic:
 
-GIL internals
+- GIL internals
 
-Thread scheduling
+- Thread scheduling
 
-I/O-bound vs CPU-bound tasks
+- I/O-bound vs CPU-bound tasks
 
-Multiprocessing internals
+- Multiprocessing internals
 
-Asyncio event loop basics
+- Asyncio event loop basics
 
-await and coroutine internals
+- await and coroutine internals
 
 ### 17. Hashing and Security
 
-Subtle but important.
+Subtle but important:
 
-Hash contract
+- Hash contract
 
-Hash randomization
+- Hash randomization
 
-Custom __hash__
+- Custom __hash__
 
-Equality-hash consistency
+- Equality-hash consistency
 
-DOS attack prevention
+- DOS attack prevention
 
 ### 18. Copying and Serialization
 
-State handling issues.
+State handling issues:
 
-Shallow vs deep copy
+- Shallow vs deep copy
 
-copy module internals
+- copy module internals
 
-Pickle protocol
+- Pickle protocol
 
-Serialization pitfalls
+- Serialization pitfalls
 
-Object identity loss
+- Object identity loss
 
 ### 19. Performance Internals
 
-Make Python fast.
+Make Python fast:
 
-Time complexity realities
+- Time complexity realities
 
-Memory vs speed tradeoffs
+- Memory vs speed tradeoffs
 
-sys.getsizeof
+- sys.getsizeof
 
-timeit
+- timeit
 
-C extensions overview
+- C extensions overview
 
-NumPy and C API conceptually
+- NumPy and C API conceptually
 
 ### 20. CPython Implementation Details (OPTIONAL BUT POWERFUL)
 
-For serious mastery.
+For serious mastery:
 
-CPython source tree
+- CPython source tree
 
-listobject.c
+- listobject.c
 
-dictobject.c
+- dictobject.c
 
-unicodeobject.c
+- unicodeobject.c
 
-Reference count macros
+- Reference count macros
 
-Fast paths
+- Fast paths
 
-Why PyPy behaves differently
+- Why PyPy behaves differently
 
 ### 21. Debugging and Introspection Tools
 
-Essential for internals learning.
+Essential for internals learning:
 
-inspect
+- inspect
 
-sys
+- sys
 
-gc
+- gc
 
-dis
+- dis
 
-tracemalloc
+- tracemalloc
 
-objgraph
+- objgraph
